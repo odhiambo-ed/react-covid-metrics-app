@@ -2,10 +2,10 @@ import {
   BrowserRouter,
   Routes,
   Route,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import HomePage from "./components/HomePage";
-import CovidData from "./components/CovidData";
+import HomePage from './components/HomePage';
+import CovidData from './components/CovidData';
 
 function App() {
   return (

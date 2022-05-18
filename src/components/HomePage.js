@@ -1,13 +1,13 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { addCountries } from "../features/countriesReducer";
-import { Link } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { addCountries } from '../features/countriesReducer';
 
-import "../App.css";
-import CountrySelection from "./CountrySelection";
-import RegionSelector from "./RegionSelector";
-import DateSelector from "./DateSelector";
-import Naigation from "./Navigation";
+import '../App.css';
+import CountrySelection from './CountrySelection';
+import RegionSelector from './RegionSelector';
+import DateSelector from './DateSelector';
+import Naigation from './Navigation';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const HomePage = () => {
   const country = useSelector((state) => state.country.value);
 
   useEffect(() => {
-    fetch("https://api.covid19tracking.narrativa.com/api/countries")
+    fetch('https://api.covid19tracking.narrativa.com/api/countries')
       .then((res) => res.json())
       .then((final) => {
         dispatch(addCountries(final.countries));
@@ -26,8 +26,8 @@ const HomePage = () => {
       <Naigation />
       <h2
         style={{
-          fontFamily: "sans-serif",
-          color: "#02c23b",
+          fontFamily: 'sans-serif',
+          color: '#02c23b',
           marginTop: 30,
         }}
       >
@@ -43,16 +43,16 @@ const HomePage = () => {
       >
         <Link
           style={{
-            textDecoration: "none",
-            color: "#FFFFFF",
-            backgroundColor: "blue",
+            textDecoration: 'none',
+            color: '#FFFFFF',
+            backgroundColor: 'blue',
             paddingTop: 10,
             paddingBottom: 10,
             paddingLeft: 15,
             paddingRight: 15,
             borderRadius: 5,
           }}
-          to={"/data"}
+          to="/data"
         >
           View Data
         </Link>
