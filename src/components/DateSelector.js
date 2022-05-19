@@ -22,13 +22,11 @@ const DateSelector = () => {
     <div
       style={{
         backgroundColor: '#e3e6e4',
-        marginRight: 100,
-        marginLeft: 100,
         padding: 25,
         display: 'flex',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        flexDirection: 'row',
+        flexDirection: 'column',
       }}
     >
       <div>

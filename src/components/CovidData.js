@@ -22,11 +22,28 @@ const CovidData = () => {
     <div className="App">
       <Navigation />
       <div
-        className="card"
         style={{
-          margin: 100,
+          marginTop: 40,
+          marginBottom: 40,
         }}
       >
+        <Link
+          style={{
+            textDecoration: 'none',
+            color: '#FFFFFF',
+            backgroundColor: 'blue',
+            paddingTop: 10,
+            paddingBottom: 10,
+            paddingLeft: 15,
+            paddingRight: 15,
+            borderRadius: 5,
+          }}
+          to="/"
+        >
+          Go Back
+        </Link>
+      </div>
+      <div className="card">
         <h5
           className="card-header"
           style={{
@@ -54,84 +71,52 @@ const CovidData = () => {
             flexDirection: 'column',
           }}
         >
-          <div
-            style={{
-              width: 970,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-            }}
-          >
-            <Layouts title="today_confirmed" count={data.today_confirmed} />
-            <Layouts title="today_deaths" count={data.today_deaths} />
-            <Layouts
-              title="today_new_confirmed"
-              count={data.today_new_confirmed}
-            />
-            <Layouts title="today_new_deaths" count={data.today_new_deaths} />
-            <Layouts
-              title="today_new_open_cases"
-              count={data.today_new_open_cases}
-            />
-            <Layouts
-              title="today_new_recovered"
-              count={data.today_new_recovered}
-            />
-            <Layouts title="today_open_cases" count={data.today_open_cases} />
-            <Layouts title="today_recovered" count={data.today_recovered} />
-            <Layouts
-              title="today_vs_yesterday_confirmed"
-              count={data.today_vs_yesterday_confirmed}
-            />
-            <Layouts
-              title="today_vs_yesterday_deaths"
-              count={data.today_vs_yesterday_deaths}
-            />
-            <Layouts
-              title="today_vs_yesterday_open_cases"
-              count={data.today_vs_yesterday_open_cases}
-            />
-            <Layouts
-              title="today_vs_yesterday_recovered"
-              count={data.today_vs_yesterday_recovered}
-            />
-            <Layouts
-              title="yesterday_confirmed"
-              count={data.yesterday_confirmed}
-            />
-            <Layouts title="yesterday_deaths" count={data.yesterday_deaths} />
-            <Layouts
-              title="yesterday_open_cases"
-              count={data.yesterday_open_cases}
-            />
-            <Layouts
-              title="yesterday_recovered"
-              count={data.yesterday_recovered}
-            />
-          </div>
-          <div
-            style={{
-              marginTop: 40,
-            }}
-          >
-            <Link
-              style={{
-                textDecoration: 'none',
-                color: '#FFFFFF',
-                backgroundColor: 'blue',
-                paddingTop: 10,
-                paddingBottom: 10,
-                paddingLeft: 15,
-                paddingRight: 15,
-                borderRadius: 5,
-              }}
-              to="/"
-            >
-              Go Back
-            </Link>
-          </div>
+          <Layouts title="today_confirmed" count={data.today_confirmed} />
+          <Layouts title="today_deaths" count={data.today_deaths} />
+          <Layouts
+            title="today_new_confirmed"
+            count={data.today_new_confirmed}
+          />
+          <Layouts title="today_new_deaths" count={data.today_new_deaths} />
+          <Layouts
+            title="today_new_open_cases"
+            count={data.today_new_open_cases}
+          />
+          <Layouts
+            title="today_new_recovered"
+            count={data.today_new_recovered}
+          />
+          <Layouts title="today_open_cases" count={data.today_open_cases} />
+          <Layouts title="today_recovered" count={data.today_recovered} />
+          <Layouts
+            title="today_vs_yesterday_confirmed"
+            count={data.today_vs_yesterday_confirmed}
+          />
+          <Layouts
+            title="today_vs_yesterday_deaths"
+            count={data.today_vs_yesterday_deaths}
+          />
+          <Layouts
+            title="today_vs_yesterday_open_cases"
+            count={data.today_vs_yesterday_open_cases}
+          />
+          <Layouts
+            title="today_vs_yesterday_recovered"
+            count={data.today_vs_yesterday_recovered}
+          />
+          <Layouts
+            title="yesterday_confirmed"
+            count={data.yesterday_confirmed}
+          />
+          <Layouts title="yesterday_deaths" count={data.yesterday_deaths} />
+          <Layouts
+            title="yesterday_open_cases"
+            count={data.yesterday_open_cases}
+          />
+          <Layouts
+            title="yesterday_recovered"
+            count={data.yesterday_recovered}
+          />
         </div>
       </div>
     </div>

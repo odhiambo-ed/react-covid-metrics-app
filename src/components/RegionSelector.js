@@ -22,7 +22,7 @@ export default function BasicSelect({ refCountry }) {
       .then((final) => {
         dispatch(addRegions(final.countries));
       });
-  }, [refCountry]);
+  }, []);
 
   const handleChange = (event) => {
     setCountryName(event.target.value);
@@ -33,8 +33,6 @@ export default function BasicSelect({ refCountry }) {
     <div
       style={{
         backgroundColor: '#e3e6e4',
-        marginRight: 100,
-        marginLeft: 100,
         padding: 25,
         display: 'flex',
         justifyContent: 'space-evenly',
