@@ -2,34 +2,43 @@ import React from 'react';
 import Proptypes from 'prop-types';
 
 const Layouts = ({ title, count }) => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-    backgroundColor: '#010342',
-    margin: 10,
-    padding: 10,
-    borderRadius: 7,
-  }}
-  >
-    <div style={{
+  <div
+    style={{
       display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+      backgroundColor: '#c7044f',
+      margin: 10,
+      padding: 10,
+      borderRadius: 7,
     }}
-    >
-      <p style={{
-        color: '#05ed2f',
-        alignSelf: 'center',
+  >
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        width: '100%',
+        padding: 10,
       }}
+    >
+      <p
+        className="title"
+        style={{
+          color: 'black',
+          alignSelf: 'center',
+        }}
       >
         {title}
       </p>
-      <p style={{
-        color: '#FFFFFF',
-      }}
+      <p
+        className="title"
+        style={{
+          color: '#FFFFFF',
+          fontWeight: 'bold',
+        }}
       >
         {count}
       </p>

@@ -1,38 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Proptypes from 'prop-types';
+import '../App.css';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
-export default function BasicSelect({ id, name }) {
+export default function BasicSelect({ name }) {
   return (
-    <div
-      style={{
-        width: 600,
-        backgroundColor: '#07002e',
-        margin: 30,
-        padding: 20,
-      }}
-    >
-      <h1
-        style={{
-          color: 'white',
-        }}
-      >
+    <div className="layout">
+      <h3 className="name">
         {name}
-      </h1>
+      </h3>
       <Link
-        style={{
-          textDecoration: 'underline',
-          color: '#05f047',
-        }}
+        className="link"
         to={`/data/${name}`}
       >
-        {id}
+        <ArrowCircleRightIcon />
       </Link>
     </div>
   );
 }
 
 BasicSelect.propTypes = {
-  id: Proptypes.string.isRequired,
   name: Proptypes.string.isRequired,
 };

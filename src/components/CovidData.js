@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { Link, useParams } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Navigation from './Navigation';
 import Layouts from './Layouts';
 
@@ -25,18 +26,12 @@ const CovidData = () => {
       >
         <Link
           style={{
-            textDecoration: 'none',
             color: '#FFFFFF',
-            backgroundColor: 'green',
-            paddingTop: 10,
-            paddingBottom: 10,
-            paddingLeft: 15,
-            paddingRight: 15,
-            borderRadius: 5,
+            alignSelf: 'flex-start',
           }}
           to="/"
         >
-          Go Back
+          <ArrowBackIcon />
         </Link>
       </div>
       <div
@@ -45,61 +40,61 @@ const CovidData = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}
-        className="card"
+        className="card1"
       >
-        <h5
-          className="card-header"
-          style={{
-            color: 'red',
-          }}
-        >
-          {params.name}
-        </h5>
-        <div>
-          <Layouts title="today_confirmed" count={data.today_confirmed} />
-          <Layouts title="today_deaths" count={data.today_deaths} />
+        <div className="covid-container">
+          <h2
+            className="card-header"
+            style={{
+              color: 'white',
+            }}
+          >
+            {params.name}
+          </h2>
+          <Layouts title="Confirmed Cases Today" count={data.today_confirmed} />
+          <Layouts title="Deaths Today" count={data.today_deaths} />
           <Layouts
-            title="today_new_confirmed"
+            title="New Confirmed Cases"
             count={data.today_new_confirmed}
           />
-          <Layouts title="today_new_deaths" count={data.today_new_deaths} />
+          <Layouts title="New Dates" count={data.today_new_deaths} />
           <Layouts
-            title="today_new_open_cases"
+            title="New Open Cases"
             count={data.today_new_open_cases}
           />
           <Layouts
-            title="today_new_recovered"
+            title="New Recovered"
             count={data.today_new_recovered}
           />
-          <Layouts title="today_open_cases" count={data.today_open_cases} />
-          <Layouts title="today_recovered" count={data.today_recovered} />
+          <Layouts title="Open Cases" count={data.today_open_cases} />
+          <Layouts title="Recovered Today" count={data.today_recovered} />
           <Layouts
-            title="today_vs_yesterday_confirmed"
-            count={data.today_vs_yesterday_confirmed}
+            title="Today Vs Yesterday Confirmed"
+            count={parseFloat(data.today_vs_yesterday_confirmed).toFixed(2)}
           />
           <Layouts
-            title="today_vs_yesterday_deaths"
-            count={data.today_vs_yesterday_deaths}
+            title="Today Vs Yesterday Deaths"
+            count={parseFloat(data.today_vs_yesterday_deaths).toFixed(2)}
           />
           <Layouts
-            title="today_vs_yesterday_open_cases"
-            count={data.today_vs_yesterday_open_cases}
+            title="Today Vs Yesterday Open Cases"
+            count={parseFloat(data.today_vs_yesterday_open_cases).toFixed(2)}
           />
           <Layouts
-            title="today_vs_yesterday_recovered"
-            count={data.today_vs_yesterday_recovered}
+            title="Today Vs Yesterday Recovered"
+            count={parseFloat(data.today_vs_yesterday_recovered).toFixed(2)}
           />
           <Layouts
-            title="yesterday_confirmed"
+            title="Yesterday Confirmed"
             count={data.yesterday_confirmed}
           />
-          <Layouts title="yesterday_deaths" count={data.yesterday_deaths} />
+          <Layouts title="Yesterday Deaths" count={data.yesterday_deaths} />
           <Layouts
-            title="yesterday_open_cases"
+            title="Yesterday Open Cases"
             count={data.yesterday_open_cases}
           />
           <Layouts
-            title="yesterday_recovered"
+            title="Yesterday Recovered"
             count={data.yesterday_recovered}
           />
         </div>

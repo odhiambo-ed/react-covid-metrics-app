@@ -21,10 +21,10 @@ const HomePage = () => {
   return (
     <div className="App">
       <Naigation />
-      <div className="mb-3 mt-3">
+      <div className="m-3 ">
         <input
           type="email"
-          className="form-control"
+          className="form-control form"
           id="search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -32,15 +32,7 @@ const HomePage = () => {
         />
       </div>
       {search.length > 0 ? (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-          }}
-        >
+        <div className="content">
           {countries
             .filter((val) => {
               if (val.name.toLowerCase().includes(search.toLowerCase())) {
@@ -53,17 +45,9 @@ const HomePage = () => {
             ))}
         </div>
       ) : (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-          }}
-        >
+        <div className="content">
           {countries.map((item) => (
-            <CountrySelection key={item.id} id={item.id} name={item.name} />
+            <CountrySelection key={item.id} name={item.name} />
           ))}
         </div>
       )}

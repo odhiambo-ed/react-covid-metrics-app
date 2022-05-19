@@ -1,10 +1,12 @@
 import React from 'react';
+import MicIcon from '@mui/icons-material/Mic';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 const Navigation = () => (
-  <nav className="navbar navbar-light bg-dark">
+  <nav className="navbar navbar-light nav-c">
     <div className="container-fluid">
       <img
-        src="https://media.istockphoto.com/vectors/coronavirus-covid19-outbreak-virus-image-covid-19-logo-with-virus-vector-id1211614741?k=20&m=1211614741&s=170667a&w=0&h=VF8_9CIp6TTj8KjO8dPvZwue9I4nvYQpOdqNcR0QzuQ="
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SARS-CoV-2_without_background.png/1193px-SARS-CoV-2_without_background.png?20210922032455"
         alt=""
         width="50"
         height="50"
@@ -13,6 +15,18 @@ const Navigation = () => (
           borderRadius: 999,
         }}
       />
+      <div>
+        <MicIcon
+          style={{
+            color: 'white',
+          }}
+        />
+        <SettingsIcon
+          style={{
+            color: 'white',
+          }}
+        />
+      </div>
     </div>
   </nav>
 );
