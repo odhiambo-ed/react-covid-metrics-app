@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Navigation from './Navigation';
 import Layouts from './Layouts';
 
 const CovidData = () => {
   const [data, setData] = useState([]);
+  const params = useParams();
 
-  const country = useSelector((state) => state.country.value);
-  const region = useSelector((state) => state.region.value);
-  const date = useSelector((state) => state.date.value);
-
-  const url = `https://api.covid19tracking.narrativa.com/api/country/${country}/region/${region}?date_from=${date[0].from}&date_to=${date[0].to}`;
+  const url = `https://api.covid19tracking.narrativa.com/api/2020-03-22/country/${params.name}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((final) => setData(final.total));
-  }, []);
+      .then((final) => setData(Object.values(final.dates)[0].countries[`${params.name}`]));
+  }, [params.name]);
   return (
     <div className="App">
       <Navigation />
@@ -29,92 +26,75 @@ const CovidData = () => {
       >
         <Link
           style={{
-            textDecoration: 'none',
             color: '#FFFFFF',
-            backgroundColor: 'blue',
-            paddingTop: 10,
-            paddingBottom: 10,
-            paddingLeft: 15,
-            paddingRight: 15,
-            borderRadius: 5,
+            alignSelf: 'flex-start',
           }}
           to="/"
         >
-          Go Back
+          <ArrowBackIcon />
         </Link>
       </div>
-      <div className="card">
-        <h5
-          className="card-header"
-          style={{
-            color: 'green',
-          }}
-        >
-          {country}
-          {' '}
-          -
-          {' '}
-          <span
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        className="card1"
+      >
+        <div className="covid-container">
+          <h2
+            className="card-header"
             style={{
-              color: 'orangered',
+              color: 'white',
             }}
           >
-            {region}
-          </span>
-        </h5>
-        <div
-          className="card-body"
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-          }}
-        >
-          <Layouts title="today_confirmed" count={data.today_confirmed} />
-          <Layouts title="today_deaths" count={data.today_deaths} />
+            {params.name}
+          </h2>
+          <Layouts title="Confirmed Cases Today" count={data.today_confirmed} />
+          <Layouts title="Deaths Today" count={data.today_deaths} />
           <Layouts
-            title="today_new_confirmed"
+            title="New Confirmed Cases"
             count={data.today_new_confirmed}
           />
-          <Layouts title="today_new_deaths" count={data.today_new_deaths} />
+          <Layouts title="New Dates" count={data.today_new_deaths} />
           <Layouts
-            title="today_new_open_cases"
+            title="New Open Cases"
             count={data.today_new_open_cases}
           />
           <Layouts
-            title="today_new_recovered"
+            title="New Recovered"
             count={data.today_new_recovered}
           />
-          <Layouts title="today_open_cases" count={data.today_open_cases} />
-          <Layouts title="today_recovered" count={data.today_recovered} />
+          <Layouts title="Open Cases" count={data.today_open_cases} />
+          <Layouts title="Recovered Today" count={data.today_recovered} />
           <Layouts
-            title="today_vs_yesterday_confirmed"
-            count={data.today_vs_yesterday_confirmed}
+            title="Today Vs Yesterday Confirmed"
+            count={parseFloat(data.today_vs_yesterday_confirmed).toFixed(2)}
           />
           <Layouts
-            title="today_vs_yesterday_deaths"
-            count={data.today_vs_yesterday_deaths}
+            title="Today Vs Yesterday Deaths"
+            count={parseFloat(data.today_vs_yesterday_deaths).toFixed(2)}
           />
           <Layouts
-            title="today_vs_yesterday_open_cases"
-            count={data.today_vs_yesterday_open_cases}
+            title="Today Vs Yesterday Open Cases"
+            count={parseFloat(data.today_vs_yesterday_open_cases).toFixed(2)}
           />
           <Layouts
-            title="today_vs_yesterday_recovered"
-            count={data.today_vs_yesterday_recovered}
+            title="Today Vs Yesterday Recovered"
+            count={parseFloat(data.today_vs_yesterday_recovered).toFixed(2)}
           />
           <Layouts
-            title="yesterday_confirmed"
+            title="Yesterday Confirmed"
             count={data.yesterday_confirmed}
           />
-          <Layouts title="yesterday_deaths" count={data.yesterday_deaths} />
+          <Layouts title="Yesterday Deaths" count={data.yesterday_deaths} />
           <Layouts
-            title="yesterday_open_cases"
+            title="Yesterday Open Cases"
             count={data.yesterday_open_cases}
           />
           <Layouts
-            title="yesterday_recovered"
+            title="Yesterday Recovered"
             count={data.yesterday_recovered}
           />
         </div>

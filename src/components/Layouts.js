@@ -1,30 +1,47 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Proptypes from 'prop-types';
 
 const Layouts = ({ title, count }) => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flexDirection: 'row',
-    width: 200,
-  }}
-  >
-    <div style={{
+  <div
+    style={{
       display: 'flex',
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
-      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+      backgroundColor: '#c7044f',
+      margin: 10,
+      padding: 10,
+      borderRadius: 7,
     }}
-    >
-      <p style={{
-        color: 'green',
-        alignSelf: 'center',
+  >
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+        width: '100%',
+        padding: 10,
       }}
+    >
+      <p
+        className="title"
+        style={{
+          color: 'black',
+          alignSelf: 'center',
+        }}
       >
         {title}
       </p>
-      <p>{count}</p>
+      <p
+        className="title"
+        style={{
+          color: '#FFFFFF',
+          fontWeight: 'bold',
+        }}
+      >
+        {count}
+      </p>
     </div>
   </div>
 );
@@ -32,6 +49,6 @@ const Layouts = ({ title, count }) => (
 export default Layouts;
 
 Layouts.propTypes = {
-  title: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
+  title: Proptypes.string.isRequired,
+  count: Proptypes.number.isRequired,
 };

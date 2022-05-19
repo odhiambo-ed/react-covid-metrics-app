@@ -1,8 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import HomePage from './components/HomePage';
 import CovidData from './components/CovidData';
@@ -12,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/data" element={<CovidData />} />
+        <Route path="/data/:name" element={<CovidData />} />
       </Routes>
     </BrowserRouter>
   );
