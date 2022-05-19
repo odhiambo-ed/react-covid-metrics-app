@@ -58,12 +58,6 @@ a {
   color: white;
 }
 
-.dataUL a:nth-child(4n),
-.dataUL a:nth-child(4n + 1) {
-  background-color: #fd33a2;
-  color: white;
-}
-
 .goBack {
   width: 25px;
   height: 25px;
