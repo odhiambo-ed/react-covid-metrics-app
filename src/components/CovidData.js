@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "../App.css";
-import Navigation from "./Navigation";
-import Layouts from "./Layouts";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import '../App.css';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import Navigation from './Navigation';
+import Layouts from './Layouts';
 
 const CovidData = () => {
   const [data, setData] = useState([]);
@@ -30,13 +30,16 @@ const CovidData = () => {
         <h5
           className="card-header"
           style={{
-            color: "green",
+            color: 'green',
           }}
         >
-          {country} -{" "}
+          {country}
+          {' '}
+          -
+          {' '}
           <span
             style={{
-              color: "orangered",
+              color: 'orangered',
             }}
           >
             {region}
@@ -45,66 +48,66 @@ const CovidData = () => {
         <div
           className="card-body"
           style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
           }}
         >
           <div
             style={{
               width: 970,
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              flexDirection: "row",
-              flexWrap: "wrap",
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
             }}
           >
-            <Layouts title={"today_confirmed"} count={data.today_confirmed} />
-            <Layouts title={"today_deaths"} count={data.today_deaths} />
+            <Layouts title="today_confirmed" count={data.today_confirmed} />
+            <Layouts title="today_deaths" count={data.today_deaths} />
             <Layouts
-              title={"today_new_confirmed"}
+              title="today_new_confirmed"
               count={data.today_new_confirmed}
             />
-            <Layouts title={"today_new_deaths"} count={data.today_new_deaths} />
+            <Layouts title="today_new_deaths" count={data.today_new_deaths} />
             <Layouts
-              title={"today_new_open_cases"}
+              title="today_new_open_cases"
               count={data.today_new_open_cases}
             />
             <Layouts
-              title={"today_new_recovered"}
+              title="today_new_recovered"
               count={data.today_new_recovered}
             />
-            <Layouts title={"today_open_cases"} count={data.today_open_cases} />
-            <Layouts title={"today_recovered"} count={data.today_recovered} />
+            <Layouts title="today_open_cases" count={data.today_open_cases} />
+            <Layouts title="today_recovered" count={data.today_recovered} />
             <Layouts
-              title={"today_vs_yesterday_confirmed"}
+              title="today_vs_yesterday_confirmed"
               count={data.today_vs_yesterday_confirmed}
             />
             <Layouts
-              title={"today_vs_yesterday_deaths"}
+              title="today_vs_yesterday_deaths"
               count={data.today_vs_yesterday_deaths}
             />
             <Layouts
-              title={"today_vs_yesterday_open_cases"}
+              title="today_vs_yesterday_open_cases"
               count={data.today_vs_yesterday_open_cases}
             />
             <Layouts
-              title={"today_vs_yesterday_recovered"}
+              title="today_vs_yesterday_recovered"
               count={data.today_vs_yesterday_recovered}
             />
             <Layouts
-              title={"yesterday_confirmed"}
+              title="yesterday_confirmed"
               count={data.yesterday_confirmed}
             />
-            <Layouts title={"yesterday_deaths"} count={data.yesterday_deaths} />
+            <Layouts title="yesterday_deaths" count={data.yesterday_deaths} />
             <Layouts
-              title={"yesterday_open_cases"}
+              title="yesterday_open_cases"
               count={data.yesterday_open_cases}
             />
             <Layouts
-              title={"yesterday_recovered"}
+              title="yesterday_recovered"
               count={data.yesterday_recovered}
             />
           </div>
@@ -115,16 +118,16 @@ const CovidData = () => {
           >
             <Link
               style={{
-                textDecoration: "none",
-                color: "#FFFFFF",
-                backgroundColor: "blue",
+                textDecoration: 'none',
+                color: '#FFFFFF',
+                backgroundColor: 'blue',
                 paddingTop: 10,
                 paddingBottom: 10,
                 paddingLeft: 15,
                 paddingRight: 15,
                 borderRadius: 5,
               }}
-              to={"/"}
+              to="/"
             >
               Go Back
             </Link>

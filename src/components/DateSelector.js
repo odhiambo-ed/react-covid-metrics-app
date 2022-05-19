@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import DatePicker from "react-date-picker";
-import { useDispatch } from "react-redux";
-import { addDate } from "../features/dateReducer";
+import React, { useState, useEffect } from 'react';
+import DatePicker from 'react-date-picker';
+import { useDispatch } from 'react-redux';
+import { addDate } from '../features/dateReducer';
 
 const DateSelector = () => {
   const [from, setFrom] = useState(new Date());
@@ -12,29 +12,29 @@ const DateSelector = () => {
   useEffect(() => {
     dispatch(
       addDate({
-        from: from,
-        to: to,
-      })
+        from,
+        to,
+      }),
     );
   }, [from, to]);
 
   return (
     <div
       style={{
-        backgroundColor: "#e3e6e4",
+        backgroundColor: '#e3e6e4',
         marginRight: 100,
         marginLeft: 100,
         padding: 25,
-        display: "flex",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        flexDirection: "row",
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        flexDirection: 'row',
       }}
     >
       <div>
         <p
           style={{
-            color: "blue",
+            color: 'blue',
           }}
         >
           From:
@@ -44,7 +44,7 @@ const DateSelector = () => {
       <div>
         <p
           style={{
-            color: "blue",
+            color: 'blue',
           }}
         >
           To:
