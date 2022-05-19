@@ -1,23 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
 import Navigation from './Navigation';
 import Layouts from './Layouts';
 
 const CovidData = () => {
   const [data, setData] = useState([]);
+  const params = useParams();
 
-  const country = useSelector((state) => state.country.value);
-  const region = useSelector((state) => state.region.value);
-  const date = useSelector((state) => state.date.value);
-
-  const url = `https://api.covid19tracking.narrativa.com/api/country/${country}/region/${region}?date_from=${date[0].from}&date_to=${date[0].to}`;
+  const url = `https://api.covid19tracking.narrativa.com/api/2020-03-22/country/${params.name}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((final) => setData(final.total));
-  }, []);
+      .then((final) => setData(Object.values(final.dates)[0].countries[`${params.name}`]));
+  }, [params.name]);
   return (
     <div className="App">
       <Navigation />
@@ -31,7 +27,7 @@ const CovidData = () => {
           style={{
             textDecoration: 'none',
             color: '#FFFFFF',
-            backgroundColor: 'blue',
+            backgroundColor: 'green',
             paddingTop: 10,
             paddingBottom: 10,
             paddingLeft: 15,
@@ -43,34 +39,23 @@ const CovidData = () => {
           Go Back
         </Link>
       </div>
-      <div className="card">
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        className="card"
+      >
         <h5
           className="card-header"
           style={{
-            color: 'green',
+            color: 'red',
           }}
         >
-          {country}
-          {' '}
-          -
-          {' '}
-          <span
-            style={{
-              color: 'orangered',
-            }}
-          >
-            {region}
-          </span>
+          {params.name}
         </h5>
-        <div
-          className="card-body"
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-          }}
-        >
+        <div>
           <Layouts title="today_confirmed" count={data.today_confirmed} />
           <Layouts title="today_deaths" count={data.today_deaths} />
           <Layouts

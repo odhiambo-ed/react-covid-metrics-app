@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Proptypes from 'prop-types';
 
 const Layouts = ({ title, count }) => (
   <div style={{
@@ -7,7 +7,10 @@ const Layouts = ({ title, count }) => (
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    width: 200,
+    backgroundColor: '#010342',
+    margin: 10,
+    padding: 10,
+    borderRadius: 7,
   }}
   >
     <div style={{
@@ -18,13 +21,18 @@ const Layouts = ({ title, count }) => (
     }}
     >
       <p style={{
-        color: 'green',
+        color: '#05ed2f',
         alignSelf: 'center',
       }}
       >
         {title}
       </p>
-      <p>{count}</p>
+      <p style={{
+        color: '#FFFFFF',
+      }}
+      >
+        {count}
+      </p>
     </div>
   </div>
 );
@@ -32,6 +40,6 @@ const Layouts = ({ title, count }) => (
 export default Layouts;
 
 Layouts.propTypes = {
-  title: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired,
+  title: Proptypes.string.isRequired,
+  count: Proptypes.number.isRequired,
 };
