@@ -39,6 +39,7 @@ const HomePage = () => {
       <div
         style={{
           marginTop: 40,
+          marginBottom: 30,
         }}
       >
         <Link

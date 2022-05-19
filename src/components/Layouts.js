@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Layouts = ({ title, count }) => (
   <div style={{
@@ -29,3 +30,8 @@ const Layouts = ({ title, count }) => (
 );
 
 export default Layouts;
+
+Layouts.propTypes = {
+  title: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+};

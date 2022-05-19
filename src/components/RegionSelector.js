@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { addRegions } from '../features/regionsReducer';
 import { addRegion } from '../features/selectedRegionReducer';
 
@@ -32,8 +33,6 @@ export default function BasicSelect({ refCountry }) {
     <div
       style={{
         backgroundColor: '#e3e6e4',
-        marginRight: 100,
-        marginLeft: 100,
         padding: 25,
         display: 'flex',
         justifyContent: 'space-evenly',
@@ -65,3 +64,6 @@ export default function BasicSelect({ refCountry }) {
     </div>
   );
 }
+BasicSelect.propTypes = {
+  refCountry: PropTypes.string.isRequired,
+};
