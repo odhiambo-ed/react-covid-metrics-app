@@ -27,8 +27,9 @@ const Layouts = ({ title, count }) => (
       <p
         className="title"
         style={{
-          color: 'black',
+          color: '#FFFFFF',
           alignSelf: 'center',
+          fontWeight: 'bold',
         }}
       >
         {title}
