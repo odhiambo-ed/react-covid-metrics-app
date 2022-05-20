@@ -19,6 +19,7 @@ This is a React app that fetch metrics from Narrativa API. It is about building 
 
 
 ## [Live Demo - Netlify](https://aesthetic-cupcake-19dcf4.netlify.app)
+## [Live Demo Video - Loom](https://www.loom.com/share/ff5b88499f064236867a193d28c8f8e2)
 <!-- ## [Live Demo ]() -->
 
 ## Built With
@@ -79,6 +80,7 @@ Feel free to check the [issues page](../../issues)
 
 ## Acknowledgements
 
+* Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 * [ReactJS Organization](https://reactjs.org/) for the amazing [Documentation](https://reactjs.org/docs/getting-started.html) on React.
 * [Redux Organization](https://redux.js.org/) for the amazing [Redux Essentials Tutorial](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) on React.
 
