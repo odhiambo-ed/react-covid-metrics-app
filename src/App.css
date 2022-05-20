@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layout {
+  width: 49%;
+  background-color: #c7044f;
+  margin-bottom: 5px;
+  height: 100px;
+}
+
+.name {
+  color: white;
+  margin-top: 10px;
+}
+
+.link {
+  text-decoration: underline;
+  color: #fff;
+}
